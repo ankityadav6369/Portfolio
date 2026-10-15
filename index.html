@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<!--
+  ============================================================
+  ANKIT YADAV — PERSONAL PORTFOLIO
+  File 1 of 3: index.html  (the STRUCTURE / content of the page)
+  The other files: style.css (looks) and script.js (behaviour).
+  Search for the word "EDIT" to find the places you will change most.
+  ============================================================
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- EDIT: page title and description (shown in browser tab and search results) -->
+  <title>Ankit Yadav | Aspiring Developer Portfolio</title>
+  <meta name="description" content="Portfolio of Ankit Yadav, an aspiring developer learning Java, web development and MySQL. Explore skills, sample projects and contact details." />
+  <meta name="keywords" content="Ankit Yadav, portfolio, aspiring developer, Java, web development, MySQL, HTML, CSS, JavaScript" />
+  <meta name="author" content="Ankit Yadav" />
+  <meta name="theme-color" content="#02030a" />
+
+  <!-- Social sharing preview (Open Graph) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Ankit Yadav | Aspiring Developer" />
+  <meta property="og:description" content="Aspiring Developer | Java | Web Development | MySQL" />
+
+  <!-- Tiny inline favicon so the browser does not look for a missing file -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%2302030a'/%3E%3Ctext x='50' y='68' font-size='56' text-anchor='middle' font-family='Arial' font-weight='700' fill='%232ec5ff'%3EA%3C/text%3E%3C/svg%3E" />
+
+  <!-- Fonts (Google Fonts). If offline, the page falls back to system fonts. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <!-- Keyboard users can press Tab once to skip straight to the content -->
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <!-- Animated background particles are drawn on this canvas by script.js -->
+  <canvas id="particles" aria-hidden="true"></canvas>
+
+  <!-- ===================== NAVBAR ===================== -->
+  <header class="site-header" id="site-header">
+    <div class="container nav">
+      <a class="brand" href="#home" aria-label="ANKIT YADAV — go to top">ANKIT YADAV</a>
+
+      <nav id="nav-menu" class="nav__menu" aria-label="Primary">
+        <ul class="nav__list">
+          <li><a class="nav__link" href="#home">Home</a></li>
+          <li><a class="nav__link" href="#about">About</a></li>
+          <li><a class="nav__link" href="#skills">Skills</a></li>
+          <li><a class="nav__link" href="#projects">Projects</a></li>
+          <li><a class="nav__link" href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav__actions">
+        <!-- Motion toggle: turns animations on/off (script.js handles the click) -->
+        <button id="motion-toggle" class="pill-btn" type="button" aria-pressed="true" title="Turn animations on or off">
+          <span class="pill-btn__dot" aria-hidden="true"></span>
+          <span>Motion</span>
+          <span id="motion-state" class="pill-btn__state" aria-hidden="true">On</span>
+        </button>
+
+        <!-- Hamburger button (only visible on small screens) -->
+        <button id="nav-toggle" class="burger" type="button" aria-expanded="false" aria-controls="nav-menu" aria-label="Open menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ===================== HERO ===================== -->
+    <section id="home" class="hero" aria-labelledby="hero-title">
+      <div class="container hero__grid">
+        <div class="hero__text">
+          <p class="eyebrow reveal">Welcome to my portfolio</p>
+
+          <!-- EDIT: your name in the headline -->
+          <h1 id="hero-title" class="hero__title reveal">Hi, I'm <span class="gradient-text">Ankit Yadav</span></h1>
+
+          <!-- EDIT: subheading -->
+          <p class="hero__subtitle reveal">Aspiring Developer | Java | Web Development | MySQL</p>
+
+          <!-- EDIT: short introduction -->
+          <p class="hero__intro reveal">
+            I enjoy building websites, learning programming, and solving problems.
+            Every day I'm trying to write cleaner code and understand how things work under the hood.
+          </p>
+
+          <div class="hero__cta reveal">
+            <a class="btn btn--primary" href="#projects">View Projects</a>
+            <a class="btn btn--ghost" href="#contact">Contact Me</a>
+          </div>
+        </div>
+
+        <!-- 3D object: Three.js draws into the canvas. Move your mouse or finger over it! -->
+        <div class="hero__stage reveal" id="hero-stage">
+          <canvas id="hero-canvas" aria-label="Interactive 3D wireframe sphere. It rotates and tilts as you move your pointer." role="img"></canvas>
+          <!-- Shown only if WebGL / Three.js fails to load -->
+          <div class="hero__fallback" aria-hidden="true"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== ABOUT ===================== -->
+    <section id="about" class="section" aria-labelledby="about-title">
+      <div class="container">
+        <header class="section__head reveal">
+          <p class="eyebrow">01 — About</p>
+          <h2 id="about-title" class="section__title">About Me</h2>
+        </header>
+
+        <div class="about__grid">
+          <!-- EDIT: replace the placeholder text with your own story -->
+          <article class="card glass about__card reveal">
+            <p>
+              <strong>[Placeholder]</strong> Write a short paragraph about yourself here. You could mention
+              what first got you interested in programming and what you enjoy about it.
+            </p>
+            <p>
+              <strong>[Placeholder]</strong> Add a second paragraph about what you are learning right now
+              and the kind of work or opportunities you are looking for.
+            </p>
+          </article>
+
+          <!-- EDIT: replace the bracketed items with real facts only when you are ready -->
+          <aside class="card glass about__facts reveal" aria-label="Quick facts">
+            <h3>Quick facts</h3>
+            <dl class="facts">
+              <div><dt>Focus</dt><dd>Java, Web Development, MySQL</dd></div>
+              <div><dt>Interests</dt><dd>Building websites, learning programming, solving problems</dd></div>
+              <div><dt>Education</dt><dd>[Add your education]</dd></div>
+              <div><dt>Location</dt><dd>[Add your city or country]</dd></div>
+            </dl>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== SKILLS ===================== -->
+    <section id="skills" class="section" aria-labelledby="skills-title">
+      <div class="container">
+        <header class="section__head reveal">
+          <p class="eyebrow">02 — Skills</p>
+          <h2 id="skills-title" class="section__title">Skills &amp; Tools</h2>
+          <p class="section__lead">Technologies I am learning and practising. Hover over a card to see it react.</p>
+        </header>
+
+        <!-- EDIT: to add a skill, copy one <li> block and change the badge, title and text -->
+        <ul class="skills__grid" data-stagger>
+          <li class="card glass tilt reveal skill">
+            <span class="skill__badge" aria-hidden="true">&lt;/&gt;</span>
+            <h3>HTML</h3>
+            <p>Structuring web pages with meaningful, accessible markup.</p>
+          </li>
+          <li class="card glass tilt reveal skill">
+            <span class="skill__badge" aria-hidden="true">{ }</span>
+            <h3>CSS</h3>
+            <p>Styling layouts, responsive design and smooth animations.</p>
+          </li>
+          <li class="card glass tilt reveal skill">
+            <span class="skill__badge" aria-hidden="true">JS</span>
+            <h3>JavaScript</h3>
+            <p>Adding interactivity and logic to websites in the browser.</p>
+          </li>
+          <li class="card glass tilt reveal skill">
+            <span class="skill__badge" aria-hidden="true">Jv</span>
+            <h3>Java</h3>
+            <p>Learning object-oriented programming and problem solving.</p>
+          </li>
+          <li class="card glass tilt reveal skill">
+            <span class="skill__badge" aria-hidden="true">DB</span>
+            <h3>MySQL</h3>
+            <p>Working with databases, tables and SQL queries.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===================== PROJECTS ===================== -->
+    <section id="projects" class="section" aria-labelledby="projects-title">
+      <div class="container">
+        <header class="section__head reveal">
+          <p class="eyebrow">03 — Projects</p>
+          <h2 id="projects-title" class="section__title">Projects</h2>
+          <p class="section__lead">
+            <strong>These are sample placeholders, not finished work.</strong>
+            Replace each one with a real project when you have it.
+          </p>
+        </header>
+
+        <!-- EDIT: change the title, text and tags. Click "Details" on a card to expand it. -->
+        <div class="projects__grid" data-stagger>
+
+          <article class="card glass tilt reveal project">
+            <span class="tag tag--sample">Sample project</span>
+            <h3>Project One — Title Here</h3>
+            <p>Short description of what this project does and why you built it.</p>
+            <ul class="chips" aria-label="Technologies">
+              <li>HTML</li><li>CSS</li><li>JavaScript</li>
+            </ul>
+            <details class="project__details">
+              <summary>Details</summary>
+              <p>Placeholder: describe the problem, what you learned and add a link to your code (for example on GitHub) once it exists.</p>
+            </details>
+          </article>
+
+          <article class="card glass tilt reveal project">
+            <span class="tag tag--sample">Sample project</span>
+            <h3>Project Two — Title Here</h3>
+            <p>Short description of a Java program or application you plan to build.</p>
+            <ul class="chips" aria-label="Technologies">
+              <li>Java</li>
+            </ul>
+            <details class="project__details">
+              <summary>Details</summary>
+              <p>Placeholder: explain the features, the challenges you solved and what you would improve next.</p>
+            </details>
+          </article>
+
+          <article class="card glass tilt reveal project">
+            <span class="tag tag--sample">Sample project</span>
+            <h3>Project Three — Title Here</h3>
+            <p>Short description of a project that stores and reads data from a database.</p>
+            <ul class="chips" aria-label="Technologies">
+              <li>Java</li><li>MySQL</li>
+            </ul>
+            <details class="project__details">
+              <summary>Details</summary>
+              <p>Placeholder: describe your database design, the main tables and how the app uses them.</p>
+            </details>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== CONTACT ===================== -->
+    <section id="contact" class="section" aria-labelledby="contact-title">
+      <div class="container">
+        <header class="section__head reveal">
+          <p class="eyebrow">04 — Contact</p>
+          <h2 id="contact-title" class="section__title">Get in Touch</h2>
+          <p class="section__lead">Feel free to reach out by phone or email.</p>
+        </header>
+
+        <div class="contact__grid" data-stagger>
+          <!-- EDIT: phone number. Keep the number the same in href (tel:) and in the text. -->
+          <article class="card glass contact__card reveal">
+            <h3>Phone</h3>
+            <a class="contact__link" href="tel:9561822741">9561822741</a>
+            <a class="btn btn--primary" href="tel:9561822741">Call Now</a>
+          </article>
+
+          <!-- EDIT: email address (in href after "mailto:" and in the text) -->
+          <article class="card glass contact__card reveal">
+            <h3>Email</h3>
+            <a class="contact__link" href="mailto:ankityadav6369@gmail.com">ankityadav6369@gmail.com</a>
+            <div class="contact__buttons">
+              <a class="btn btn--primary" href="mailto:ankityadav6369@gmail.com?subject=Hello%20Ankit">Send Email</a>
+              <button class="btn btn--ghost" type="button" id="copy-email" data-email="ankityadav6369@gmail.com">Copy Email</button>
+            </div>
+            <p id="copy-status" class="contact__status" role="status" aria-live="polite"></p>
+          </article>
+        </div>
+
+        <!-- No contact form on purpose: sending a message from a web page needs a backend server. -->
+        <p class="contact__note reveal">
+          Note: this site has no contact form because sending messages from a web page requires
+          a backend service. The phone and email buttons above open your dialer or email app directly.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="site-footer">
+    <div class="container footer__inner">
+      <!-- The year updates automatically (script.js); 2026 is only a fallback -->
+      <p>&copy; <span id="year">2026</span> Ankit Yadav. All rights reserved.</p>
+      <button id="back-to-top" class="btn btn--ghost btn--small" type="button">&uarr; Back to top</button>
+    </div>
+  </footer>
+
+  <!-- Three.js from a CDN (gives us the global variable THREE) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
